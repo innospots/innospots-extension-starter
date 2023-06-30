@@ -1,0 +1,56 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>innospots-root</artifactId>
+        <groupId>io.innospots</groupId>
+        <version>${innosopts.version}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>innospots-extension-starter</artifactId>
+    <name>innospots-extension-starter</name>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.innospots</groupId>
+                <artifactId>innospots-libra</artifactId>
+                <version>${project.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>io.innospots</groupId>
+            <artifactId>innospots-libra-base</artifactId>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}</directory>
+                <includes>
+                    <include>widgets.json</include>
+                    <include>resources/**</include>
+                    <include>widgets/**</include>
+                    <include>dist/**</include>
+                    <include>static/**</include>
+                    <include>**.img</include>
+                    <include>**.css</include>
+                    <include>**.js</include>
+                </includes>
+                <targetPath>META-INF/resources/apps/${project.name}</targetPath>
+            </resource>
+        </resources>
+    </build>
+
+</project>
